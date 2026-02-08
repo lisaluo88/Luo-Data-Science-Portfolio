@@ -18,3 +18,5 @@ filtered_data = data[data["Category"] == category]
 
 st.write("Filtered Data")
 st.dataframe(filtered_data)
+
+Load dataset from CSV and enable interactive filtering
