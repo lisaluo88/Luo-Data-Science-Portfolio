@@ -42,7 +42,7 @@ from sklearn.metrics import (
 # =============================================================================
 st.set_page_config(
     page_title="ML Explorer",
-    page_icon="🤖",
+    page_icon="🌞",
     layout="wide",
     initial_sidebar_state="expanded",
 )
