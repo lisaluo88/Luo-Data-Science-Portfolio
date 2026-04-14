@@ -750,7 +750,7 @@ import re
 content = re.sub(r'    # -{5,}\n    # TAB 3: ROC CURVE.*?(?=    # -{5,}\n    # TAB 4)', '', content, flags=re.DOTALL)
 
 # Rename tab4 to tab3
-content = content.replace('    with tab4:', '    with tab3:')
+content = content.replace('    with tab3:', '    with tab3:')
 
 open('app.py', 'w').write(content)
 print('Done')
