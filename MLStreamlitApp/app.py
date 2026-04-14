@@ -639,7 +639,7 @@ if run_btn:
                 y_prob = model.predict_proba(X_test)[:, 1]
 
                 # roc_curve() computes the (fpr, tpr) pairs at every threshold
-                fpr, tpr, _ = roc_curve(y_test, y_prob)
+                fpr, tpr, _ = roc_curve(y_test, y_prob, pos_label=1)
 
                 # AUC = Area Under the Curve — single summary score (0 to 1)
                 auc = roc_auc_score(y_test, y_prob)
