@@ -30,8 +30,6 @@ from sklearn.metrics import (
     accuracy_score,         
     confusion_matrix,       
     classification_report,  
-    roc_curve,              
-    roc_auc_score           
 )
 
 
@@ -541,14 +539,13 @@ if run_btn:
     # =========================================================================
     # SECTION 12: EVALUATION TABS
     # -------------------------------------------------------------------------
-    # Intention: Organize the four evaluation charts/tables into separate tabs
+    # Intention: Organize the evaluation charts/tables into separate tabs
     # so the user can switch between them without the page becoming too long.
     # Each tab matches a specific evaluation technique from the class notebooks.
     # =========================================================================
-    tab1, tab2, tab3, tab4 = st.tabs([
+    tab1, tab2, tab3 = st.tabs([
         "Confusion Matrix",       
         "Classification Report",  
-        "ROC Curve",              
         "Feature Importance"      
     ])
 
@@ -620,53 +617,7 @@ if run_btn:
         st.dataframe(report_df, use_container_width=True)
 
     # -------------------------------------------------------------------------
-    # TAB 3: ROC CURVE
-    # -------------------------------------------------------------------------
-    # Intention: Plot the trade-off between catching true positives and
-    # accidentally flagging false positives at different decision thresholds.
-    # A model that perfectly separates classes has AUC = 1.0.
-    # A random coin flip has AUC = 0.5 (shown as the dashed diagonal line).
-    # ROC curves only work for binary classification (2 classes), so we show
-    # an informational message if the target has more than 2 classes.
-    # -------------------------------------------------------------------------
-    with tab3:
-        st.caption("Week 10.1 — plots True Positive Rate vs False Positive Rate.")
-        if len(classes) == 2:
-            try:
-                # predict_proba() returns the probability of each class
-                # [:, 1] selects the probability of the POSITIVE class (class 1)
-                # Week 10.1: y_probs = model.predict_proba(X_test)[:, 1]
-                y_prob = model.predict_proba(X_test)[:, 1]
-
-                # roc_curve() computes the (fpr, tpr) pairs at every threshold
-                fpr, tpr, _ = roc_curve(y_test, y_prob, pos_label=1)
-
-                # AUC = Area Under the Curve — single summary score (0 to 1)
-                auc = roc_auc_score(y_test, y_prob)
-
-                fig2, ax2 = plt.subplots(figsize=(6, 5))
-                fig2.patch.set_facecolor("#161b22")
-                ax2.set_facecolor("#161b22")
-                # Plot the ROC curve for our model
-                ax2.plot(fpr, tpr, color="#58a6ff", lw=2, label=f"AUC = {auc:.3f}")
-                # Plot the diagonal baseline — this is what a random model looks like
-                ax2.plot([0, 1], [0, 1], color="#30363d", lw=1, linestyle="--",
-                         label="Random classifier")
-                ax2.set_xlabel("False Positive Rate", color="#8b949e")
-                ax2.set_ylabel("True Positive Rate", color="#8b949e")
-                ax2.set_title("ROC Curve", color="#e6edf3")
-                ax2.legend(facecolor="#161b22", edgecolor="#30363d", labelcolor="#e6edf3")
-                ax2.tick_params(colors="#8b949e")
-                st.pyplot(fig2, use_container_width=True)
-                st.metric("AUC Score", f"{auc:.4f}")
-            except Exception as e:
-                st.info(f"ROC curve unavailable: {e}")
-        else:
-            st.info(f"ROC curve is shown for binary classification only. "
-                    f"Your target has {len(classes)} unique classes.")
-
-    # -------------------------------------------------------------------------
-    # TAB 4: FEATURE IMPORTANCE
+    # TAB 3: FEATURE IMPORTANCE
     # -------------------------------------------------------------------------
     # Intention: Show which features had the most influence on the model's
     # predictions, displayed as a horizontal bar chart sorted by importance.
@@ -676,7 +627,7 @@ if run_btn:
     # Figure height scales dynamically so bars and labels never overlap,
     # no matter how many features are in the dataset.
     # -------------------------------------------------------------------------
-    with tab4:
+    with tab3:
         st.caption("Decision Tree uses .feature_importances_; Logistic Regression uses .coef_ (Week 9.1).")
         importances = None
 
@@ -778,3 +729,29 @@ st.markdown(
     "Logistic Regression (Wk 9.1) · Decision Tree (Wk 9.2) · KNN (Wk 11.2)</p>",
     unsafe_allow_html=True
 )
+
+python3 -c "
+content = open('app.py').read()
+
+# Remove ROC curve from imports
+content = content.replace(
+    '    roc_curve,              \n    roc_auc_score           \n',
+    ''
+)
+
+# Fix tabs line
+content = content.replace(
+    'tab1, tab2, tab3, tab4 = st.tabs([\n        \"Confusion Matrix\",       \n        \"Classification Report\",  \n        \"ROC Curve\",              \n        \"Feature Importance\"      \n    ])',
+    'tab1, tab2, tab3 = st.tabs([\n        \"Confusion Matrix\",\n        \"Classification Report\",\n        \"Feature Importance\"\n    ])'
+)
+
+# Remove ROC tab block
+import re
+content = re.sub(r'    # -{5,}\n    # TAB 3: ROC CURVE.*?(?=    # -{5,}\n    # TAB 4)', '', content, flags=re.DOTALL)
+
+# Rename tab4 to tab3
+content = content.replace('    with tab4:', '    with tab3:')
+
+open('app.py', 'w').write(content)
+print('Done')
+"
