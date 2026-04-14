@@ -1,79 +1,74 @@
 # Luo Data Science Portfolio
 
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat-square&logo=streamlit)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange?style=flat-square&logo=scikit-learn)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
+
 ## Overview
 
-This repository contains my data science projects completed during the semester.
-The projects demonstrate skills in data cleaning, visualization, and machine learning.
+This repository contains my data science projects completed during the semester.  
+Together, these projects demonstrate my ability to move from data exploration and cleaning to building and deploying interactive machine learning applications.
+
+---
 
 ## Skills Demonstrated
 
-- Data cleaning and preprocessing
-- Exploratory data analysis (EDA)
-- Data visualization
-- Working with real-world datasets
-- Building interactive applications
-- Tidy data transformation
-
-## Project 1 — Penguins Streamlit Dashboard
-
-This project is an interactive Streamlit dashboard built with the penguins dataset.
-
-Features of the dashboard include:
-
-- Sidebar navigation across multiple pages
-- Global filtering by penguin species
-- Dataset preview table
-- Summary metric for average body mass
-- Bar chart comparing male and female body mass
-- Basic structure for future correlation analysis
-
-Tools used:
-
-- Python
-- pandas
-- matplotlib
-- Streamlit
-
-This project demonstrates my ability to build an interactive data app that allows users to explore a dataset visually and dynamically.
+| Area | Tools & Techniques |
+|---|---|
+| Data Cleaning | pandas, `pd.melt()`, `str.split()`, `dropna()` |
+| Visualization | matplotlib, seaborn, Streamlit charts |
+| Machine Learning | scikit-learn, Logistic Regression, Decision Tree, KNN |
+| App Development | Streamlit, interactive UI, hyperparameter tuning |
+| Tidy Data | reshaping, pivoting, groupby, long-format transformation |
 
 ---
 
-## Project 2 — Tidy Data Project: 2008 Olympics Medalists
+## Projects
 
-This project applies tidy data principles to clean and reshape the 2008 Olympics medal dataset.
+### Project 1 — Penguins Streamlit Dashboard
 
-The original dataset stored variables such as gender and sport inside column headers, so I used pandas functions to transform the data into tidy format.
+An interactive dashboard for exploring the Palmer Penguins dataset through filtering, summary metrics, and charts.
 
-Techniques used:
-
-- `pd.melt()`
-- `pivot_table()`
-- `groupby()`
-- `rename()`
-- `sort_values()`
-- matplotlib
-- seaborn
-
-This project demonstrates my ability to clean messy real-world data, restructure it for analysis, and create meaningful visualizations.
-
-Repository link:  
-[2008 Olympics Tidy Data Project](https://github.com/lisaluo88/Luo-Data-Science-Portfolio)
+**Key features:** sidebar species filter · dataset preview · body mass bar chart by sex · summary metrics  
+**Tools:** Python · pandas · matplotlib · Streamlit
 
 ---
 
-## How These Projects Fit My Portfolio
+### Project 2 — Tidy Data: 2008 Olympics Medalists
 
-Together, these projects show different parts of my data science skill set:
+Transformed a wide-format Olympics dataset where gender and sport were encoded in column names into a fully tidy structure ready for analysis.
 
-- The **Penguins Streamlit Dashboard** shows my ability to create interactive tools for exploring data.
-- The **Tidy Data Project** shows my ability to clean, reshape, and analyze messy datasets.
+**Key techniques:** `pd.melt()` · `pivot_table()` · `groupby()` · `sort_values()` · seaborn visualizations  
+**Output:** sorted medal pivot table · top-10 sports bar chart · gender distribution count plot
 
-Combined, they demonstrate that I can both prepare data and present it effectively, which are essential skills in real-world data science work.
+> [View Repository](https://github.com/lisaluo88/Luo-Data-Science-Portfolio)
+
+---
+
+### Project 3 — ML Explorer App ⭐
+
+> [Launch Live App](https://luo-data-science-portfolio-99.streamlit.app/) · [View Repository](https://github.com/lisaluo88/Luo-Data-Science-Portfolio)
+
+An end-to-end interactive machine learning application. Upload any CSV, pick a model, tune hyperparameters, and evaluate performance — all through a graphical interface, no coding required.
+
+**Key features:**
+- CSV upload or built-in sample dataset
+- Three classifiers: Logistic Regression · Decision Tree · K-Nearest Neighbors
+- Adjustable hyperparameters, train/test split, and random seed
+- Metrics: accuracy · precision · recall · F1 · ROC AUC
+- Confusion matrix heatmap · classification report · feature importance chart
+- Run summary panel for reproducibility
+
+**Tools:** Python · pandas · numpy · matplotlib · seaborn · Streamlit · scikit-learn
+
+---
+
+## Portfolio Progression
+The ML Explorer is the culmination of this progression — it combines interactive UI design from Project 1 with real-world data handling from Project 2, and extends both into full machine learning model training and deployment.
 
 ---
 
 ## Author
 
-Lisa Luo  
-Data Science Portfolio  
-Spring 2026
+**Lisa Luo** · Data Science Portfolio · Spring 2026
