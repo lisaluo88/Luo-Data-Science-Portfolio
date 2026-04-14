@@ -175,15 +175,8 @@ The app automatically transforms this wide-format CSV into a clean long-format t
 ---
 
 ## 📸 App Screenshots
-
-> *(Add your own screenshots here after running the app)*
->
-> Suggested screenshots to include:
-> - The sidebar with hyperparameter sliders
-> - The dataset preview table
-> - The confusion matrix heatmap
-> - The ROC curve plot
-> - The feature importance bar chart
+![Sidebar](sidebar.png)
+![Confusion Matrix](confusionmatrix.png)
 
 ---
 
