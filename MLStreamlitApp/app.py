@@ -729,29 +729,3 @@ st.markdown(
     "Logistic Regression (Wk 9.1) · Decision Tree (Wk 9.2) · KNN (Wk 11.2)</p>",
     unsafe_allow_html=True
 )
-
-python3 -c "
-content = open('app.py').read()
-
-# Remove ROC curve from imports
-content = content.replace(
-    '    roc_curve,              \n    roc_auc_score           \n',
-    ''
-)
-
-# Fix tabs line
-content = content.replace(
-    'tab1, tab2, tab3, tab4 = st.tabs([\n        \"Confusion Matrix\",       \n        \"Classification Report\",  \n        \"ROC Curve\",              \n        \"Feature Importance\"      \n    ])',
-    'tab1, tab2, tab3 = st.tabs([\n        \"Confusion Matrix\",\n        \"Classification Report\",\n        \"Feature Importance\"\n    ])'
-)
-
-# Remove ROC tab block
-import re
-content = re.sub(r'    # -{5,}\n    # TAB 3: ROC CURVE.*?(?=    # -{5,}\n    # TAB 4)', '', content, flags=re.DOTALL)
-
-# Rename tab4 to tab3
-content = content.replace('    with tab3:', '    with tab3:')
-
-open('app.py', 'w').write(content)
-print('Done')
-"
