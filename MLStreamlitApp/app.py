@@ -10,6 +10,8 @@
 # - warnings    → silences non-critical warning messages so output stays clean
 # All sklearn imports come directly from the Week 9–11 class notebooks.
 # =============================================================================
+import os
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -46,7 +48,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
-
 
 # =============================================================================
 # SECTION 3: CUSTOM CSS STYLING
@@ -173,7 +174,8 @@ with st.sidebar:
         @st.cache_data
         def load_olympics():
             # Load the raw CSV — 1,875 rows, 71 columns (one per sport/gender)
-            df = pd.read_csv("olympics_08_medalists.csv")
+            import os
+            df = pd.read_csv(os.path.join(os.path.dirname(__file__), "olympics_08_medalists.csv"))
             id_col = "medalist_name"
             sport_cols = [c for c in df.columns if c != id_col]
 
