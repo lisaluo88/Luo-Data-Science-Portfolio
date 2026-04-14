@@ -26,9 +26,7 @@ The app handles all preprocessing automatically — missing value removal, categ
 
 ## 🚀 Deployed App
 
-**[▶ Open ML Explorer on Streamlit Cloud](https://your-app-url.streamlit.app)**
-
-> Replace the link above with your actual Streamlit Cloud URL after deploying.
+**[▶ Open ML Explorer on Streamlit Cloud](https://luo-data-science-portfolio-99.streamlit.app/)**
 
 ---
 
@@ -42,12 +40,12 @@ The app handles all preprocessing automatically — missing value removal, categ
 
 **Step 1 — Clone the portfolio repository:**
 ```bash
-git clone https://github.com/YOUR_USERNAME/LASTNAME-Data-Science-Portfolio.git
+git clone https://github.com/YOUR_USERNAME/Luo-Data-Science-Portfolio.git
 ```
 
 **Step 2 — Navigate into the app folder:**
 ```bash
-cd LASTNAME-Data-Science-Portfolio/MLStreamlitApp
+cd Luo-Data-Science-Portfolio/MLStreamlitApp
 ```
 
 **Step 3 — Create and activate a virtual environment:**
@@ -93,19 +91,17 @@ http://localhost:8501
 
 ### Models
 
-All three models are taken directly from the class notebooks:
-
-**1. Logistic Regression** *(Week 9.1)*
+**1. Logistic Regression**
 - A linear model that estimates the probability of belonging to each class
 - Works well as a baseline for classification tasks
 - Outputs coefficients that show how much each feature influences the prediction
 
-**2. Decision Tree** *(Week 9.2)*
+**2. Decision Tree** 
 - A tree-based model that makes decisions by recursively splitting the data
 - Highly interpretable — you can visualize exactly how it makes decisions
 - Can capture non-linear relationships without feature scaling
 
-**3. K-Nearest Neighbors** *(Week 11.2)*
+**3. K-Nearest Neighbors** 
 - Classifies a new point by looking at the k closest training examples and taking a majority vote
 - Distance-based, so feature scaling is essential (handled automatically by `StandardScaler`)
 - Simple but effective — no explicit training phase
@@ -114,7 +110,7 @@ All three models are taken directly from the class notebooks:
 
 ### Hyperparameter Tuning
 
-Instead of hardcoding parameters like the class notebooks, ML Explorer exposes them as **interactive sliders and dropdowns** in the sidebar. This mirrors the concept of `GridSearchCV` from Week 10.2, but gives the user direct manual control.
+Instead of hardcoding parameters, ML Explorer exposes them as **interactive sliders and dropdowns** in the sidebar, which gives the user direct manual control.
 
 | Model | Hyperparameter | What it controls |
 |---|---|---|
@@ -132,7 +128,7 @@ Instead of hardcoding parameters like the class notebooks, ML Explorer exposes t
 
 ### Preprocessing Pipeline
 
-The app automatically runs these steps before training — matching the class notebook workflow exactly:
+The app automatically runs these steps before training:
 
 | Step | Method | Class Reference |
 |---|---|---|
@@ -212,5 +208,5 @@ The app automatically transforms this wide-format CSV into a clean long-format t
 
 ## 👤 Author
 
-**[Your Name]**
-[GitHub](https://github.com/YOUR_USERNAME) | [Portfolio](https://github.com/YOUR_USERNAME/LASTNAME-Data-Science-Portfolio)
+**[Lisa Luo]**
+[GitHub](https://github.com/lisaluo88) | [Portfolio](https://github.com/lisaluo88/Luo-Data-Science-Portfolio)
