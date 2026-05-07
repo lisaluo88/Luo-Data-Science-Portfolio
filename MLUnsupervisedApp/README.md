@@ -55,27 +55,21 @@ All defaults match what was used in our class notebooks — for example, K-Means
 
 ## Screenshots
 
-> Add screenshots of the running app here. To take screenshots, deploy or run the app locally, then capture each of the following views and place the image files in a `screenshots/` folder.
+**App home and sidebar controls**
 
-**App home / sidebar:**
-```
 ![App home](screenshots/home.png)
-```
 
-**K-Means cluster plot + elbow:**
-```
+**K-Means: 2D PCA scatter colored by cluster, with elbow plot**
+
 ![K-Means results](screenshots/kmeans.png)
-```
 
-**Hierarchical dendrogram:**
-```
+**Hierarchical clustering: dendrogram with cluster threshold**
+
 ![Dendrogram](screenshots/dendrogram.png)
-```
 
-**PCA loadings:**
-```
+**PCA: scree plot and loadings showing feature contributions to PC1/PC2**
+
 ![PCA loadings](screenshots/pca-loadings.png)
-```
 
 ---
 
