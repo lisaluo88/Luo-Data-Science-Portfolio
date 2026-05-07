@@ -8,8 +8,20 @@
 
 ## Overview
 
-This repository contains my data science projects completed during the semester.
-Together, these projects demonstrate my ability to move from data exploration and cleaning to building and deploying **both supervised and unsupervised** interactive machine learning applications.
+This repository contains my data science projects completed during the Introduction to Data Science course at the University of Notre Dame. Together, these projects demonstrate my ability to move from data exploration and cleaning to building and deploying **both supervised and unsupervised** interactive machine learning applications.
+
+---
+
+## At a Glance
+
+| # | Project | What It Does | Tech | Live App |
+|---|---|---|---|---|
+| 1 | [**Penguins Streamlit Dashboard**](./basic_streamlit_app) | Interactive multi-page dashboard for exploring Palmer Penguins species traits with a global species filter. | Streamlit · pandas · matplotlib | — |
+| 2 | [**Tidy Data — 2008 Olympics**](./TidyData-Project) | Reshapes a wide, messy Olympics medalists dataset into a tidy long-format DataFrame, then visualizes medal distributions. | pandas · seaborn · Jupyter | — |
+| 3 | [**ML Explorer — Supervised**](./MLStreamlitApp) | Train and evaluate Logistic Regression, Decision Tree, and KNN classifiers through a no-code interface. | Streamlit · scikit-learn · seaborn | [Launch ↗](https://luo-data-science-portfolio-99.streamlit.app/) |
+| 4 | [**Unsupervised ML Explorer ⭐**](./MLUnsupervisedApp) | Run K-Means, Hierarchical Clustering, and PCA interactively with elbow curves, dendrograms, and scree plots. | Streamlit · scikit-learn · scipy | [Launch ↗](https://luo-unsupervised-ml.streamlit.app) |
+
+> Each project folder has its own detailed README with setup instructions, screenshots, and code examples.
 
 ---
 
@@ -26,10 +38,22 @@ Together, these projects demonstrate my ability to move from data exploration an
 
 ---
 
+## Repository Structure
+
+```
+Luo-Data-Science-Portfolio/
+├── basic_streamlit_app/        # Project 1 — Penguins Streamlit Dashboard
+├── TidyData-Project/           # Project 2 — 2008 Olympics tidy data analysis
+├── MLStreamlitApp/             # Project 3 — Supervised ML Explorer
+├── MLUnsupervisedApp/          # Project 4 — Unsupervised ML Explorer
+└── README.md                   # This file (portfolio overview)
+```
+
+---
+
 ## Projects
 
 ### Project 1 — Penguins Streamlit Dashboard
-
 An interactive dashboard for exploring the Palmer Penguins dataset through filtering, summary metrics, and charts.
 
 **Key features:** sidebar species filter · dataset preview · body mass bar chart by sex · summary metrics
@@ -38,19 +62,18 @@ An interactive dashboard for exploring the Palmer Penguins dataset through filte
 ---
 
 ### Project 2 — Tidy Data: 2008 Olympics Medalists
-
 Transformed a wide-format Olympics dataset where gender and sport were encoded in column names into a fully tidy structure ready for analysis.
 
 **Key techniques:** `pd.melt()` · `pivot_table()` · `groupby()` · `sort_values()` · seaborn visualizations
 **Output:** sorted medal pivot table · top-10 sports bar chart · gender distribution count plot
 
-> [View Repository](https://github.com/lisaluo88/Luo-Data-Science-Portfolio)
+> [View Project Folder](./TidyData-Project)
 
 ---
 
 ### Project 3 — ML Explorer App (Supervised Learning)
 
-> [Launch Live App](https://luo-data-science-portfolio-99.streamlit.app/) · [View Repository](https://github.com/lisaluo88/Luo-Data-Science-Portfolio)
+> [Launch Live App](https://luo-data-science-portfolio-99.streamlit.app/) · [View Project Folder](./MLStreamlitApp)
 
 An end-to-end interactive machine learning application for **supervised classification**. Upload any CSV, pick a model, tune hyperparameters, and evaluate performance — all through a graphical interface, no coding required.
 
@@ -68,7 +91,7 @@ An end-to-end interactive machine learning application for **supervised classifi
 
 ### Project 4 — Unsupervised ML Explorer ⭐
 
-> [Launch Live App](https://luo-unsupervised-ml.streamlit.app) · [View Repository](https://github.com/lisaluo88/Luo-Data-Science-Portfolio)
+> [Launch Live App](https://luo-unsupervised-ml.streamlit.app) · [View Project Folder](./MLUnsupervisedApp)
 
 The capstone of my portfolio — an interactive machine learning application focused on **unsupervised techniques**. Upload any CSV (or use the built-in Breast Cancer / Iris samples), choose a method, tune the relevant hyperparameters, and watch the math respond in real time.
 
